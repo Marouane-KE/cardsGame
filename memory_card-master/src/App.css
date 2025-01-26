@@ -1,0 +1,63 @@
+.card {
+  perspective: 1000px;
+}
+
+.card .inner-card {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flipped .inner-card {
+  transform: rotateY(180deg);
+}
+
+.card .inner-card > * {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card .inner-card.matched > * {
+  backface-visibility: visible;
+}
+
+.card .inner-card .back {
+  transform: rotateY(180deg);
+}
+/* Background and general container styling */
+.menu-container {
+  position: absolute;
+  top: 20px;
+  left: 1px;
+  text-color: black;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 20rem; /* Equivalent to w-80 in Tailwind */
+  background-image: url('/public/menu.svg');
+  background-size: cover;
+}
+
+/* Title styling */
+.menu-title {
+  font-size: 1.875rem; /* Equivalent to text-3xl in Tailwind */
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Tiny5', sans-serif;
+}
+
+/* Button styling */
+.menu-button {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 0.375rem;
+  color: #3F1E19;
+  font-family: 'Tiny5', sans-serif;
+  font-size: 1.125rem; /* Equivalent to text-lg in Tailwind */
+  background-image: url('/public/StoneButton.svg');
+  background-size: cover;
+  background-position: center;
+}
